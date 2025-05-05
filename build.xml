@@ -1,0 +1,221 @@
+<project name="web-1.0" default="build">
+
+    <!-- Параметры -->
+    <property file="build.properties"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+        <fileset dir="${main.dir}" includes="*.java"/>
+    </path>
+    <path id="classpath.test">
+        <pathelement location="${junit}"/>
+        <pathelement location="${hamcrest}"/>
+        <pathelement location="${classes.dir}"/>
+        <pathelement location="${test.classes.dir}"/>
+        <pathelement location="${mockito}"/>
+        <pathelement location="${bytebuddy}"/>
+        <pathelement location="${bytebuddy.agent}"/>
+        <pathelement location="${objenesis}"/>
+        <fileset dir="${lib.dir}" includes="jakarta.persistence-api-*.jar"/>
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="${contrib}"/>
+        </classpath>
+    </taskdef>
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="${contrib}"/>
+        </classpath>
+    </taskdef>
+
+    <!-- Очистка -->
+    <target name="clean">
+        <echo message="### CLEAN STARTED ###"/>
+        <delete dir="${build.dir}"/>
+        <delete dir="${junit.report.dir}"/>
+        <delete dir="${backup.dir}"/>
+        <echo message="### CLEAN COMPLETED ###"/>
+    </target>
+
+    <!-- Компиляция -->
+    <target name="compile" depends="clean">
+        <echo message="### COMPILE STARTED ###"/>
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" includeantruntime="false"/>
+        <echo message="### COMPILE COMPLETED ###"/>
+    </target>
+
+    <!-- Основная сборка -->
+    <target name="build" depends="compile">
+        <echo message="### BUILD STARTED ###"/>
+        <mkdir dir="${build.dir}/WEB-INF/classes"/>
+        <mkdir dir="${build.dir}/WEB-INF/lib"/>
+        <copy todir="${build.dir}/WEB-INF/lib">
+            <fileset dir="${lib.dir}"/>
+        </copy>
+        <copy todir="${build.dir}/WEB-INF/classes">
+            <fileset dir="${resources.dir}" includes="**/*"/>
+        </copy>
+
+        <copy todir="${build.dir}">
+            <fileset dir="${web.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+
+        <war destfile="${build.dir}/${ant.project.name}.war" webxml="${build.web.xml}">
+            <fileset dir="${build.dir}">
+                <exclude name="**/web_3.jar"/>
+            </fileset>
+            <manifest>
+                <attribute name="Created-By" value="Maria2525"/>
+                <attribute name="Manifest-Version" value="1.0"/>
+            </manifest>
+        </war>
+        <echo message="### BUILD COMPLETED ###"/>
+    </target>
+
+    <!-- Компиляция тестов -->
+    <target name="compile-tests" depends="compile">
+        <echo message="### COMPILING TESTS ###"/>
+        <mkdir dir="${test.classes.dir}"/>
+        <javac
+                srcdir="${test.dir}"
+                destdir="${test.classes.dir}"
+                classpathref="classpath.test"
+                encoding="UTF-8"
+                includeantruntime="false"/>
+    </target>
+
+    <condition property="os.name.is.windows">
+        <os family="windows"/>
+    </condition>
+    <condition property="os.name.is.mac">
+        <os family="mac"/>
+    </condition>
+    <condition property="os.name.is.unix">
+        <os family="unix"/>
+    </condition>
+
+    <target name="get-cores-windows" if="os.name.is.windows">
+        <exec executable="cmd.exe" outputproperty="core.count">
+            <arg line="wmic cpu get NumberOfCores,NumberOfLogicalProcessors"/>
+        </exec>
+        <echo message="Number of cores (Windows): ${core.count}"/>
+    </target>
+    <target name="get-cores-mac" if="os.name.is.mac">
+        <exec executable="sh" outputproperty="core.count">
+            <arg line="-c 'sysctl -n machdep.cpu.core_count'"/>
+        </exec>
+        <echo message="Number of cores (macOS): ${core.count}"/>
+    </target>
+    <target name="get-cores-unix" if="os.name.is.unix">
+        <exec executable="sh" outputproperty="core.count">
+        <arg line="nproc"/>
+        </exec>
+        <echo message="Number of cores (Unix): ${core.count}"/>
+    </target>
+    <target name="core-count" depends="get-cores-windows, get-cores-mac, get-cores-unix">
+        <condition property="core.count" value="1">
+            <isset property="core.count"/>
+        </condition>
+        <echo message="Number of cores: ${core.count}"/>
+    </target>
+    <!-- Выполнение тестов -->
+    <target name="test" depends="compile-tests, core-count">
+        <echo message="### TESTING STARTED ###"/>
+        <mkdir dir="${junit.report.dir}"/>
+
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath refid="classpath.test"/>
+
+            <formatter type="xml"/>
+
+            <batchtest fork="yes" todir="${junit.report.dir}">
+                <fileset dir="${test.dir}">
+                    <include name="**/*Test.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+
+        <junitreport todir="${junit.report.dir}">
+            <fileset dir="${junit.report.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.report.dir}/html"/>
+        </junitreport>
+
+        <echo message="### TESTING COMPLETED ###"/>
+    </target>
+
+
+    <!-- native2ascii: кодировка исходников -->
+    <target name="native2ascii">
+        <echo message="### NATIVE2ASCII STARTED ###"/>
+        <property name="locales.resources.dir" value="${resources.dir}/locales"/>
+        <property name="locales.build.dir" value="${classes.dir}/locales"/>
+        <delete dir="${locales.build.dir}" quiet="true"/>
+        <mkdir dir="${locales.build.dir}"/>
+        <native2ascii
+                encoding="UTF-8"
+                src="${locales.resources.dir}"
+                dest="${locales.build.dir}"
+                includes="**/*.properties"
+                ext=".properties">
+            <mapper type="glob" from="*.properties" to="*.properties"/>
+        </native2ascii>
+        <echo message="Converted files: ${locales.resources.dir} -> ${locales.build.dir}"/>
+        <echo message="### NATIVE2ASCII COMPLETED ###"/>
+    </target>
+
+    <!-- Альтернативная сборка -->
+    <target name="alt" depends="compile">
+        <echo message="### ALT STARTED ###"/>
+
+        <mkdir dir="${build.dir}/alt-src"/>
+        <copy todir="${build.dir}/alt-src">
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+        </copy>
+
+        <replaceregexp match="CheckResult" replace="AltCheckResult" flags="g">
+            <fileset dir="${build.dir}/alt-src" includes="**/*.java"/>
+        </replaceregexp>
+        <replaceregexp match="Result" replace="AltResult" flags="g">
+            <fileset dir="${build.dir}/alt-src" includes="**/*.java"/>
+        </replaceregexp>
+
+        <mkdir dir="${build.dir}/alt-classes"/>
+        <javac srcdir="${build.dir}/alt-src" destdir="${build.dir}/alt-classes" classpathref="classpath" includeantruntime="false"/>
+
+        <jar destfile="${build.dir}/alt/${ant.project.name}-alt.jar" basedir="${build.dir}/alt-classes">
+            <manifest>
+                <attribute name="Created-By" value="Maria2525"/>
+                <attribute name="Manifest-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
+        <echo message="### ALT COMPLETED ###"/>
+    </target>
+
+    <!-- Восстановление исходных файлов после alt -->
+    <target name="revert-alt" depends="clean">
+        <echo message="### REVERTING ALT CHANGES STARTED ###"/>
+
+        <replaceregexp match="AltCheckResult" replace="CheckResult" flags="g">
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+        </replaceregexp>
+
+        <replaceregexp match="AltResult" replace="Result" flags="g">
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+        </replaceregexp>
+
+        <delete dir="${build.dir}/alt" quiet="true"/>
+
+        <echo message="### REVERTING ALT CHANGES COMPLETED ###"/>
+    </target>
+
+
+</project>

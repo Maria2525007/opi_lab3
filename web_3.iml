@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="C:\Users\maria\OneDrive\Рабочий стол\itmo_web_3-main\itmo_web_3-main\ant\build\WEB-INF\web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="C:\Users\maria\OneDrive\Рабочий стол\itmo_web_3-main\itmo_web_3-main\ant\build" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+</module>

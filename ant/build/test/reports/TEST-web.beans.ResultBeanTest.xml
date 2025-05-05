@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="Huawei_Maria" name="web.beans.ResultBeanTest" skipped="0" tests="4" time="0.933" timestamp="2025-05-05T14:17:16">
+  <properties>
+    <property name="ant.library.dir" value="D:\Programs\Utils\apache-ant\apache-ant-1.10.14\lib" />
+    <property name="java.specification.version" value="17" />
+    <property name="ant.project.name" value="web-1.0" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1251" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.vendor.url" value="https://openjdk.java.net/" />
+    <property name="resources.dir" value="src/main/resources" />
+    <property name="sun.boot.library.path" value="C:\Users\maria\.jdks\jbr-17.0.12\bin" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner web.beans.ResultBeanTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\ITMO\ОПИ\лаба3\itmo_web_3-main\ant\build\test\reports\TEST-web.beans.ResultBeanTest.xml crashfile=D:\ITMO\ОПИ\лаба3\itmo_web_3-main\junitvmwatcher7462095742038000810.properties propsfile=D:\ITMO\ОПИ\лаба3\itmo_web_3-main\junit7047124986811609958.properties" />
+    <property name="test.classes.dir" value="ant/build/test/classes" />
+    <property name="backup.dir" value="backup" />
+    <property name="jdk.debug" value="release" />
+    <property name="sun.stderr.encoding" value="cp866" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="os.name.is.windows" value="true" />
+    <property name="web.dir" value="src/main/webapp" />
+    <property name="java.version.date" value="2024-07-16" />
+    <property name="java.home" value="C:\Users\maria\.jdks\jbr-17.0.12" />
+    <property name="contrib" value="lib/ant-contrib-1.0b3.jar" />
+    <property name="basedir" value="D:\ITMO\ОПИ\лаба3\itmo_web_3-main" />
+    <property name="file.separator" value="\" />
+    <property name="java.vm.compressedOopsMode" value="Zero based" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="sun.stdout.encoding" value="cp866" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="intellij.os.virtualization" value="none" />
+    <property name="jbr.virtualization.information" value="Hyper-V role" />
+    <property name="bytebuddy.agent" value="lib/byte-buddy-agent-1.12.14.jar" />
+    <property name="wildfly.username" value="s290102" />
+    <property name="user.script" value="" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="java.runtime.version" value="17.0.12+1-b1207.37" />
+    <property name="user.name" value="maria" />
+    <property name="file.encoding" value="Cp1251" />
+    <property name="core.count" value="Microsoft Windows [Version 10.0.22631.5189]&#xd;&#xa;(c) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation). ‚бҐ Їа ў  § йЁйҐ­л.&#xd;&#xa;&#xd;&#xa;D:\ITMO\ЋЏ€\« Ў 3\itmo_web_3-main&gt;" />
+    <property name="bytebuddy" value="lib/byte-buddy-1.14.2.jar" />
+    <property name="java.vendor.version" value="JBR-17.0.12+1-1207.37-nomod" />
+    <property name="jsch" value="lib/jsch-0.1.55.jar" />
+    <property name="build.dir" value="ant/build" />
+    <property name="vm.args" value="" />
+    <property name="java.io.tmpdir" value="C:\Users\maria\AppData\Local\Temp\" />
+    <property name="java.version" value="17.0.12" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.home" value="D:\Programs\Utils\apache-ant\apache-ant-1.10.14" />
+    <property name="ant.dir" value="ant" />
+    <property name="lib.dir" value="lib" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="native.encoding" value="Cp1251" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on August 16 2023" />
+    <property name="java.library.path" value="C:\Users\maria\.jdks\jbr-17.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\maria\.jdks\jbr-17.0.12\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Utils\apache-maven-3.9.9\bin;C:\Program Files\dotnet\;D:\Programs\Utils\apache-ant\apache-ant-1.10.14\bin;C:\Users\maria\.jdks\jbr-17.0.12\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Utils\apache-maven-3.9.9\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Utils\apache-maven-3.9.9\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\maria\AppData\Local\Programs\Python\Launcher\;C:\Users\maria\AppData\Local\Microsoft\WindowsApps;C:\Users\maria\AppData\Local\JetBrains\Toolbox\scripts;D:\Programs\JetBrains\IntelliJ IDEA 2024.3.1.1\bin;D:\Programs\JetBrains\PyCharm 2024.3.1.1\bin;D:\Programs\JetBrains\CLion 2024.3.1.1\bin;C:\Users\maria\AppData\Roaming\npm;C:\Users\maria\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\maria\.dotnet\tools;C:\ghcup\bin;C:\ghcup\bin;C:\ghcup\ghc\9.4.8\bin;D:\wrench;C:\Users\maria\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;;." />
+    <property name="java.vendor" value="JetBrains s.r.o." />
+    <property name="classes.dir" value="ant/build/WEB-INF/classes" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="ant.file.type" value="file" />
+    <property name="junit.report.dir" value="ant/build/test/reports" />
+    <property name="java.class.path" value="D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\junit-4.13.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\hamcrest-core-1.3.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\ant\build\WEB-INF\classes;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\ant\build\test\classes;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\mockito-core-4.6.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\byte-buddy-1.14.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\byte-buddy-agent-1.12.14.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\objenesis-3.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.persistence-api-3.1.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\ant-contrib-1.0b3.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\ant-jakarta-bcel-1.6.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\ant-jsch-1.8.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\asm-7.3.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\asm-analysis-7.3.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\asm-commons-7.3.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\asm-tree-7.3.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\asm-util-7.3.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\cdi-api-1.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\hibernate-core-6.2.6.Final.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.ejb-api-4.0.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.enterprise.cdi-api-4.0.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.faces-api-3.0.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.inject-api-2.0.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.jakartaee-web-api-9.0.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.json-api-2.1.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.json.bind-api-3.0.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.servlet-api-6.0.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jakarta.validation-api-3.0.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\javax.annotation-api-1.3.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\javax.inject-1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\javax.persistence-api-2.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jaxb-runtime-3.0.2.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jsch-0.1.55.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\jsf-api-2.1.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\junit-jupiter-api-5.9.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\junit-jupiter-engine-5.9.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\junit-platform-launcher-1.10.0.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\lombok-1.18.26.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\nashorn-core-15.4.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\org.eclipse.persistence.core-2.7.9.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\postgresql-42.2.5.jar;D:\ITMO\ОПИ\лаба3\itmo_web_3-main\lib\primefaces-11.0.0-jakarta.jar;D:\Programs\Utils\apache-ant\apache-ant-1.10.14\lib\ant-launcher.jar;D:\Programs\Utils\apache-ant\apache-ant-1.10.14\lib\ant.jar;D:\Programs\Utils\apache-ant\apache-ant-1.10.14\lib\ant-junit.jar;D:\Programs\Utils\apache-ant\apache-ant-1.10.14\lib\ant-junit4.jar" />
+    <property name="java.vm.vendor" value="JetBrains s.r.o." />
+    <property name="user.variant" value="" />
+    <property name="ant.file.web-1.0" value="D:\ITMO\ОПИ\лаба3\itmo_web_3-main\build.xml" />
+    <property name="os.name" value="Windows 11" />
+    <property name="java.vm.specification.version" value="17" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="user.country" value="RU" />
+    <property name="test.dir" value="src/test/java" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="user.home" value="C:\Users\maria" />
+    <property name="compile.version" value="11" />
+    <property name="user.language" value="ru" />
+    <property name="ant.java.version" value="17" />
+    <property name="main.dir" value="src/main" />
+    <property name="ant.file" value="D:\ITMO\ОПИ\лаба3\itmo_web_3-main\build.xml" />
+    <property name="path.separator" value=";" />
+    <property name="mockito" value="lib/mockito-core-4.6.1.jar" />
+    <property name="wildfly.port" value="2222" />
+    <property name="os.version" value="10.0" />
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+    <property name="build.web.xml" value="ant/build/WEB-INF/web.xml" />
+    <property name="ant.project.invoked-targets" value="test" />
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+    <property name="wildfly.password" value="uLpQ-5309" />
+    <property name="ant.file.type.web-1.0" value="file" />
+    <property name="ant.core.lib" value="D:\Programs\Utils\apache-ant\apache-ant-1.10.14\lib\ant.jar" />
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+    <property name="junit" value="lib/junit-4.13.2.jar" />
+    <property name="wildfly.remote.dir" value="" />
+    <property name="user.dir" value="D:\ITMO\ОПИ\лаба3\itmo_web_3-main" />
+    <property name="os.arch" value="amd64" />
+    <property name="build.dir.lib" value="ant/build/WEB-INF/lib" />
+    <property name="wildfly.hostname" value="se.ifmo.ru" />
+    <property name="objenesis" value="lib/objenesis-3.2.jar" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="java.vm.version" value="17.0.12+1-b1207.37" />
+    <property name="hamcrest" value="lib/hamcrest-core-1.3.jar" />
+    <property name="java.class.version" value="61.0" />
+    <property name="src.dir" value="src" />
+    <property name="ant.project.default-target" value="build" />
+  </properties>
+  <testcase classname="web.beans.ResultBeanTest" name="testHitCheckInThirdQuadrant" time="0.788" />
+  <testcase classname="web.beans.ResultBeanTest" name="testHitCheckInFirstQuadrant" time="0.002" />
+  <testcase classname="web.beans.ResultBeanTest" name="testHitCheckInSecondQuadrant" time="0.002" />
+  <testcase classname="web.beans.ResultBeanTest" name="testMissCheck" time="0.001" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

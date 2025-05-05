@@ -1,0 +1,82 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Unit Test Results: All Errors</title>
+        <link rel="stylesheet" type="text/css" title="Style" href="stylesheet.css">
+    </head>
+    <body onload="open('allclasses-frame.html','classListFrame')">
+        <h1>Unit Test Results.</h1>
+        <table width="100%">
+            <tr>
+                <td align="left"></td><td align="right">Designed for use with <a href="https://www.junit.org/">JUnit</a> and <a href="https://ant.apache.org/">Ant</a>.</td>
+            </tr>
+        </table>
+        <hr size="1">
+        <h2>All Errors</h2>
+        <table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+            <tr valign="top">
+                <th>Class</th><th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+            </tr>
+            <tr valign="top" class="Error">
+                <td><a href="web/beans/1_ValidationBeanTest.html">ValidationBeanTest</a></td><td><a name="testInvalidR"></a><a href="web/beans/1_ValidationBeanTest.html#testInvalidR">testInvalidR</a></td><td>Error</td><td>N/A
+                    <br>
+                    <br>
+                    <code>java.lang.ExceptionInInitializerError
+                        <br>
+                        	at web.beans.ValidationBeanTest.setUp(Unknown Source)
+                        <br>
+                        	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                        <br>
+                        	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+                        <br>
+                        	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                        <br>
+                        Caused by: java.util.MissingResourceException: Can't find bundle for base name locales/messages, locale ru_RU
+                        <br>
+                        	at java.base/java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:2045)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1683)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1586)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1549)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:858)
+                        <br>
+                        	at web.beans.ValidationBean.&lt;clinit&gt;(Unknown Source)
+                        <br>
+                    </code></td><td>0.023</td>
+            </tr>
+            <tr valign="top" class="Error">
+                <td><a href="web/beans/1_ValidationBeanTest.html">ValidationBeanTest</a></td><td><a name="testInvalidX"></a><a href="web/beans/1_ValidationBeanTest.html#testInvalidX">testInvalidX</a></td><td>Error</td><td>Could not initialize class web.beans.ValidationBean
+                    <br>
+                    <br>
+                    <code>java.lang.NoClassDefFoundError: Could not initialize class web.beans.ValidationBean
+                        <br>
+                        	at web.beans.ValidationBeanTest.setUp(Unknown Source)
+                        <br>
+                        	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                        <br>
+                        	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+                        <br>
+                        	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                        <br>
+                        Caused by: java.lang.ExceptionInInitializerError: Exception java.util.MissingResourceException: Can't find bundle for base name locales/messages, locale ru_RU [in thread "main"]
+                        <br>
+                        	at java.base/java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:2045)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1683)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1586)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1549)
+                        <br>
+                        	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:858)
+                        <br>
+                        	at web.beans.ValidationBean.&lt;clinit&gt;(Unknown Source)
+                        <br>
+                    </code></td><td>0.001</td>
+            </tr>
+        </table>
+    </body>
+</html>
